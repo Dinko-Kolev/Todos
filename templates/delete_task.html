@@ -1,0 +1,8 @@
+{% include 'base.html' %}
+{% load static %}
+    <form method="POST" action="" class="input center-column">
+         <div class="title">Are you sure you want to delete {{ task.title }}<hr></div>
+        {{ form }}
+        {% csrf_token %}
+         <button type="submit" class="btn btn-secondary btn-lg btn-block">Delete</button>
+    </form>

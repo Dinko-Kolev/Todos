@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block index %}
+    <div class="center-column">
+        <div class="title">Tasks to do...<hr></div>
+        {% include "form.html"%}
+
+
+        {% include "tasks.html"%}
+    </div>
+{% endblock %}

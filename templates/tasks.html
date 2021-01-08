@@ -1,0 +1,31 @@
+{% load static %}
+{% if tasks %}
+    <div>
+
+        <ul class="tasks-list-center">
+
+        {% for task in tasks %}
+            {% if task.complete %}
+                <li class="item-row">
+                    <a class="btn btn-secondary" href="{% url 'edit' task.id %}"> Edit</a>
+                    <a class="btn btn-secondary"  href="{% url 'delete' task.id %}"> Delete</a>
+                    <del>{{ task.title }}</del>
+                </li>
+            {% else %}
+                <li class="item-row">
+                    <a class="btn btn-secondary" href="{% url 'edit' task.id %}"> Edit</a>
+                    <a class="btn btn-secondary"  href="{% url 'delete' task.id %}"> Delete
+                    </a>
+
+                    {{ task.title }}
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+    </div>
+{% else %}
+    <div>
+    <h1>No Tasks</h1>
+    </div>
+{% endif %}
